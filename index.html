@@ -22,22 +22,29 @@
       width: 100%;
       border: none;
       background: black;
+
+      /* 체감 확대 */
+      transform: scale(1.15);
+      transform-origin: center;
+
+      /* 운전 중 실수 터치 방지 */
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- 상단: 광암터널 2 -->
-    <iframe 
-      src="https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912356&cctvname=%255B%25EC%2588%2598%25EB%258F%2584%25EA%25B6%258C%25EC%25A0%259C1%25EC%2588%259C%25ED%2599%2598%25EC%2584%25A0%255D%25EA%25B4%2591%25EC%2595%2594%25ED%2584%25B0%25EB%2584%25902&kind=Z3&cctvip=6&cctvch=undefined&id=6/09%2B5Gp/UhiOV6m6mvvG5QZjlFqzqSLQygmaAval9KTOWDAPm5bBV5geyv5VZ7vou5M7t3YulKHYqDfgMGGOt4g==&cctvpasswd=undefined&cctvport=undefined&minX=127.13831991191401&minY=37.50168750548727&maxX=127.22911187367816&maxY=37.53981724910411">
-    </iframe>
+<div class="container">
+  <!-- 상단: 광암터널 2 -->
+  <iframe 
+    src="https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912356&cctvname=%255B%25EC%2588%2598%25EB%258F%2584%25EA%25B6%258C%25EC%25A0%259C1%25EC%2588%259C%25ED%2599%2598%25EC%2584%25A0%255D%25EA%25B4%2591%25EC%2595%2594%25ED%2584%25B0%25EB%2584%25902&kind=Z3&cctvip=6&id=6/09%2B5Gp/UhiOV6m6mvvG5QZjlFqzqSLQygmaAval9KTOWDAPm5bBV5geyv5VZ7vou5M7t3YulKHYqDfgMGGOt4g==">
+  </iframe>
 
-    <!-- 하단: 광암터널 3 -->
-    <iframe 
-      src="https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912357&cctvname=%255B%25EC%2588%2598%25EB%258F%2584%25EA%25B6%258C%25EC%25A0%259C1%25EC%2588%259C%25ED%2599%2598%25EC%2584%25A0%255D%25EA%25B4%2591%25EC%2595%2594%25ED%2584%25B0%25EB%2584%25903&kind=Z3&cctvip=7&cctvch=undefined&id=7/u5pPEGa80JWouoyCuReWLVQ5UTJjBpkB4zW4coUH4gex1Ecxnk9WUY1VyyIeNPB/6rnqT4CcGG9u6RdDVt7HkQ==&cctvpasswd=undefined&cctvport=undefined&minX=127.16293497048777&minY=37.49363613376316&maxX=127.2134110488094&maxY=37.54912628632948">
-    </iframe>
-  </div>
+  <!-- 하단: 광암터널 3 -->
+  <iframe 
+    src="https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912357&cctvname=%255B%25EC%2588%2598%25EB%258F%2584%25EA%25B6%258C%25EC%25A0%259C1%25EC%2588%259C%25ED%2599%2598%25EC%2584%25A0%255D%25EA%25B4%2591%25EC%2595%2594%25ED%2584%25B0%25EB%2584%25903&kind=Z3&cctvip=7&id=7/u5pPEGa80JWouoyCuReWLVQ5UTJjBpkB4zW4coUH4gex1Ecxnk9WUY1VyyIeNPB/6rnqT4CcGG9u6RdDVt7HkQ==">
+  </iframe>
+</div>
 
 </body>
 </html>
