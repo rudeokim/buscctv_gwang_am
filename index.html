@@ -39,33 +39,34 @@
   <iframe id="topFrame"></iframe>
   <iframe id="bottomFrame"></iframe>
 
-  <script>
-    const cctvs = {
-      "광암터널 2": "https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912356&kind=Z3",
-      "광암터널 3": "https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912357&kind=Z3"
-    };
+<script>
+  const cctvs = {
+    "광암터널 2": "https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912356&cctvname=%255B%25EC%2588%2598%25EB%258F%2584%25EA%25B6%258C%25EC%25A0%259C1%25EC%2588%259C%25ED%2599%2598%25EC%2584%25A0%255D%25EA%25B4%2591%25EC%2595%2594%25ED%2584%25B0%25EB%2584%25902&kind=Z3&cctvip=6&cctvch=undefined&id=6/09%2B5Gp/UhiOV6m6mvvG5QZjlFqzqSLQygmaAval9KTOWDAPm5bBV5geyv5VZ7vou5M7t3YulKHYqDfgMGGOt4g==&cctvpasswd=undefined&cctvport=undefined&minX=127.13831991191401&minY=37.50168750548727&maxX=127.22911187367816&maxY=37.53981724910411",
 
-    const topSelect = document.getElementById("topSelect");
-    const bottomSelect = document.getElementById("bottomSelect");
-    const topFrame = document.getElementById("topFrame");
-    const bottomFrame = document.getElementById("bottomFrame");
+    "광암터널 3": "https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912357&cctvname=%255B%25EC%2588%2598%25EB%258F%2584%25EA%25B6%258C%25EC%25A0%259C1%25EC%2588%259C%25ED%2599%2598%25EC%2584%25A0%255D%25EA%25B4%2591%25EC%2595%2594%25ED%2584%25B0%25EB%2584%25903&kind=Z3&cctvip=7&cctvch=undefined&id=7/u5pPEGa80JWouoyCuReWLVQ5UTJjBpkB4zW4coUH4gex1Ecxnk9WUY1VyyIeNPB/6rnqT4CcGG9u6RdDVt7HkQ==&cctvpasswd=undefined&cctvport=undefined&minX=127.16293497048777&minY=37.49363613376316&maxX=127.2134110488094&maxY=37.54912628632948"
+  };
 
-    function setupSelect(select, frame) {
-      Object.entries(cctvs).forEach(([name, url]) => {
-        const opt = document.createElement("option");
-        opt.value = url;
-        opt.textContent = name;
-        select.appendChild(opt);
-      });
-      select.onchange = () => frame.src = select.value;
-    }
+  const topSelect = document.getElementById("topSelect");
+  const bottomSelect = document.getElementById("bottomSelect");
+  const topFrame = document.getElementById("topFrame");
+  const bottomFrame = document.getElementById("bottomFrame");
 
-    setupSelect(topSelect, topFrame);
-    setupSelect(bottomSelect, bottomFrame);
+  function setupSelect(select, frame) {
+    Object.entries(cctvs).forEach(([name, url]) => {
+      const opt = document.createElement("option");
+      opt.value = url;
+      opt.textContent = name;
+      select.appendChild(opt);
+    });
+    select.onchange = () => frame.src = select.value;
+  }
 
-    topFrame.src = topSelect.value;
-    bottomFrame.src = bottomSelect.value;
-  </script>
+  setupSelect(topSelect, topFrame);
+  setupSelect(bottomSelect, bottomFrame);
+
+  topFrame.src = topSelect.value;
+  bottomFrame.src = bottomSelect.value;
+</script>
 
 </body>
 </html>
