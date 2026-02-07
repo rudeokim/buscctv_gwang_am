@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>버스기사 CCTV 뷰어</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    .controls {
+      padding: 10px;
+      background: #1c1c1c;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    iframe {
+      width: 100%;
+      height: 45vh;
+      border: none;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <select id="topSelect"></select>
+    <select id="bottomSelect"></select>
+  </div>
+
+  <iframe id="topFrame"></iframe>
+  <iframe id="bottomFrame"></iframe>
+
+  <script>
+    const cctvs = {
+      "광암터널 2": "https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912356&kind=Z3",
+      "광암터널 3": "https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=E912357&kind=Z3"
+    };
+
+    const topSelect = document.getElementById("topSelect");
+    const bottomSelect = document.getElementById("bottomSelect");
+    const topFrame = document.getElementById("topFrame");
+    const bottomFrame = document.getElementById("bottomFrame");
+
+    function setupSelect(select, frame) {
+      Object.entries(cctvs).forEach(([name, url]) => {
+        const opt = document.createElement("option");
+        opt.value = url;
+        opt.textContent = name;
+        select.appendChild(opt);
+      });
+      select.onchange = () => frame.src = select.value;
+    }
+
+    setupSelect(topSelect, topFrame);
+    setupSelect(bottomSelect, bottomFrame);
+
+    topFrame.src = topSelect.value;
+    bottomFrame.src = bottomSelect.value;
+  </script>
+
+</body>
+</html>
